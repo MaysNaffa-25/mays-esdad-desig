@@ -1,0 +1,31 @@
+<div class="epaymen">
+<button class="btn btn-primary" (click)="openEpaymentDetails()"> الدفع الالكتروني 
+ 
+</button>
+
+@if(isOpen){
+<div class="modal-overlay" >
+    <div class="modal-header">
+      <h2>{{ title }}</h2>
+      <button class="close-button" (click)="closeModal()">X</button>
+    </div>
+    <div class="moda-content"> <h3>تفاصيل الدفع </h3>
+   <div class="info">
+    <p><strong>رقم الفاتورة :</strong> {{epayment.invoceNo}}</p>
+    <p><strong>  : تاريخ الإصدار</strong>{{epayment.issueDte}}</p>
+    <p><strong> المبلغ المستحق:</strong> {{epayment.amount}}</p>
+    <p><strong>  تاريخ الإستحقاق:</strong> {{epayment.dueDate}}</p>
+    <p class="note">يجب تسديد المبلغ قبل تاريخ الإستحقاق لتجنب الغرامة المالية</p>
+   </div>
+
+     <div class="actions">
+       <button class="btn btn-secondary" (click)="closeModal()"> إلغاء </button>
+       <button class="btn btn-primary" (click)="copyCode()"> </button>
+
+     </div>
+
+    </div>
+
+
+</div> }
+</div>
